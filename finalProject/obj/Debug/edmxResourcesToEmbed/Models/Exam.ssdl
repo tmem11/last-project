@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IdentityDBModel6.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Exam_t">
+    <Key>
+      <PropertyRef Name="Exam Number" />
+    </Key>
+    <Property Name="Exam Number" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Exam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Exam solution" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="IdentityDBModel6StoreContainer">
+    <EntitySet Name="Exam_t" EntityType="Self.Exam_t" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

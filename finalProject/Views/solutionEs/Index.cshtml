@@ -1,0 +1,29 @@
+﻿@model IEnumerable<finalProject.Models.solutionE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>solutionExam</h2>
+
+<p>
+    
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.solutionExam)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.solutionExam)
+        </td>
+       
+    </tr>
+}
+
+</table>

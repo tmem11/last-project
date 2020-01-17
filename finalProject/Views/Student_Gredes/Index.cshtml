@@ -1,0 +1,35 @@
+﻿@model IEnumerable<finalProject.Models.Student_Gredes>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Search Grade</h2>
+
+
+<table class="table">
+    @using (Html.BeginForm())
+    {
+        <p>
+            Enter the StudentID: @Html.TextBox("Grade")
+            <input type="submit" value="Search" />
+        </p>
+    }
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Grades)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grades)
+            </td>
+           
+        </tr>
+    }
+
+</table>

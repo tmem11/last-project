@@ -1,0 +1,26 @@
+﻿@model finalProject.Models.Exam_Tabel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Exam_Tabel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Exam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Exam)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Examid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IdentityDBModel1StoreContainer" CdmEntityContainer="IdentityDBEntities1">
+    <EntitySetMapping Name="BooksRequests">
+      <EntityTypeMapping TypeName="IdentityDBModel1.BooksRequest">
+        <MappingFragment StoreEntitySet="BooksRequest">
+          <ScalarProperty Name="bookname" ColumnName="bookname" />
+          <ScalarProperty Name="author_" ColumnName="author " />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

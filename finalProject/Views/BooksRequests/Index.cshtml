@@ -1,0 +1,45 @@
+﻿@model IEnumerable<finalProject.Models.BooksRequest>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Students requsets</h2>
+
+
+<table class="table">
+    @using (Html.BeginForm())
+    {
+        <p>
+            Enter the book name or the Author: @Html.TextBox("SearchString")
+            <input type="submit" value="Search" />
+        </p>
+    }
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.author_)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bookname)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.author_)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bookname)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.bookname }) |
+                @Html.ActionLink("Details", "Details", new { id = item.bookname }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.bookname })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<finalProject.Models.ADD_Comment>
+
+@{
+    ViewBag.Title = "Searching Comment";
+}
+
+<h2>Searching Comment</h2>
+
+
+<table class="table">
+    @using (Html.BeginForm())
+    {
+        <p>
+            Enter the StudentID: @Html.TextBox("SearchString")
+            <input type="submit" value="Search" />
+        </p>
+    }
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Comment)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IdentityDBModel2StoreContainer" CdmEntityContainer="IdentityDBEntities5">
+    <EntitySetMapping Name="comments">
+      <EntityTypeMapping TypeName="IdentityDBModel2.comment">
+        <MappingFragment StoreEntitySet="comment">
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="comment1" ColumnName="comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

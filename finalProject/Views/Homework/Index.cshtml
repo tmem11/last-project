@@ -1,0 +1,32 @@
+﻿@model IEnumerable<finalProject.Models.Homework>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>MY home works</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.homeworktitle)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.homeworktitle)
+        </td>
+       
+        <td>
+
+            <a href="   http://localhost:49380/home_work_sol/Create">Request for recorded books</a>
+        </td>
+    </tr>
+}
+
+</table>
