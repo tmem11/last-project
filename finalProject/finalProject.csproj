@@ -235,6 +235,18 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Manage\UserList.cshtml" />
+    <Content Include="Views\Manage\UserDelete.cshtml" />
+    <Content Include="Views\Manage\UserEdit.cshtml" />
+    <Content Include="Views\Manage\ParentList.cshtml" />
+    <Content Include="Views\Manage\StudentsList.cshtml" />
+    <Content Include="Views\Manage\TeachersList.cshtml" />
+    <Content Include="Views\Manage\ParentEdit.cshtml" />
+    <Content Include="Views\Manage\ParentDelete.cshtml" />
+    <Content Include="Views\Manage\StudentEdit.cshtml" />
+    <Content Include="Views\Manage\StudentDelete.cshtml" />
+    <Content Include="Views\Manage\TeachersEdit.cshtml" />
+    <Content Include="Views\Manage\TeachersDelete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
