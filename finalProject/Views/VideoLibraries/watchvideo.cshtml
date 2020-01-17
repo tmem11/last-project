@@ -1,0 +1,27 @@
+﻿@model IEnumerable<finalProject.Models.VideoLibrary>
+
+@{
+    ViewBag.Title = "watch videos";
+}
+
+<h2>videos library</h2>
+
+
+<table class="table">
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+
+                @if (!string.IsNullOrEmpty(item.videoLink))
+                {
+                    <h1>@item.Title</h1>
+                    <iframe width="560" height="315" src="//www.youtube.com/embed/@item.videoLink" frameborder="0" allowfullscreen></iframe>
+                }
+            </td>
+        </tr>
+    }
+
+</table>

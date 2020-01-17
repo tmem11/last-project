@@ -1,0 +1,26 @@
+﻿@model finalProject.Models.BooksRequest
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BooksRequest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.author_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.author_)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.bookname }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

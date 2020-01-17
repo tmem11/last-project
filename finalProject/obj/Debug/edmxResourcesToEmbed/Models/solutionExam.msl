@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IdentityDBModel8StoreContainer" CdmEntityContainer="IdentityDBEntities15">
+    <EntitySetMapping Name="solutionEs">
+      <EntityTypeMapping TypeName="IdentityDBModel8.solutionE">
+        <MappingFragment StoreEntitySet="solutionE">
+          <ScalarProperty Name="studentID" ColumnName="studentID" />
+          <ScalarProperty Name="ExamNumber" ColumnName="ExamNumber" />
+          <ScalarProperty Name="solutionExam" ColumnName="solutionExam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

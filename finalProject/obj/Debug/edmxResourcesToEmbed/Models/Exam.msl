@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IdentityDBModel6StoreContainer" CdmEntityContainer="IdentityDBEntities12">
+    <EntitySetMapping Name="Exam_t">
+      <EntityTypeMapping TypeName="IdentityDBModel6.Exam_t">
+        <MappingFragment StoreEntitySet="Exam_t">
+          <ScalarProperty Name="Exam_Number" ColumnName="Exam Number" />
+          <ScalarProperty Name="Exam" ColumnName="Exam" />
+          <ScalarProperty Name="Exam_solution" ColumnName="Exam solution" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
