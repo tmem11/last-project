@@ -19,6 +19,235 @@ namespace finalProject.Controllers
         public ManageController()
         {
         }
+        //edit show delete
+        [AllowAnonymous]
+        public ActionResult UserList()
+        {
+            var context = new Models.ApplicationDbContext();
+            //db.Roles.Where(a => !a.Name.Contains("Admins")).ToList(),"Name", "Name"
+                var users = context.Users.Where(a => !a.Id.Contains("1efc2904-f2d5-4452-a6b8-59db5ef0f404")).ToList();
+
+            return View(users);
+        }
+        [AllowAnonymous]
+
+        public ActionResult ParentList()
+        {
+            var context = new Models.ApplicationDbContext();
+           
+            var users = from u in context.Users
+                        where u.Roles.Any(r => r.RoleId == "be717000-a7c9-4bc7-aa8d-a4e9b9a9d781")
+                        select u;
+
+
+            return View(users);
+        }
+        [AllowAnonymous]
+        public ActionResult StudentsList()
+        {
+            var context = new Models.ApplicationDbContext();
+
+            var users = from u in context.Users
+                        where u.Roles.Any(r => r.RoleId == "5558f638-b7ac-4fce-bbac-4df6117656fe")
+                        select u;
+
+
+            return View(users);
+        }
+        [AllowAnonymous]
+        public ActionResult TeachersList()
+        {
+            var context = new Models.ApplicationDbContext();
+
+            var users = from u in context.Users
+                        where u.Roles.Any(r => r.RoleId == "91103981-d663-4430-80fe-550755622cad")
+                        select u;
+
+
+            return View(users);
+        }
+        [AllowAnonymous]
+        public ActionResult UserDelete(string id)
+        {
+            var context = new Models.ApplicationDbContext();
+            var user = context.Users.Where(u => u.Id == id).FirstOrDefault();
+            return View(user);
+        }
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult UserDelete(ApplicationUser appuser)
+        {
+            var context = new Models.ApplicationDbContext();
+            var user = context.Users.Where(u => u.Id == appuser.Id).FirstOrDefault();
+            context.Users.Remove(user);
+            context.SaveChanges();
+            //var user = context.Users.Where(u => u.Id == id.ToString()).FirstOrDefault();
+            return RedirectToAction("UserList");
+        }
+        [AllowAnonymous]
+        public ActionResult UserEdit(string id)
+        {
+            var context = new Models.ApplicationDbContext();
+            var user = context.Users.Where(u => u.Id == id).FirstOrDefault();
+            return View(user);
+        }
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult UserEdit(ApplicationUser appuser)
+        {
+            var context = new Models.ApplicationDbContext();
+            var user = context.Users.Where(u => u.Id == appuser.Id).FirstOrDefault();
+            //context.Entry(appuser).State = EntityState.Modified;
+            user.Email = appuser.Email;
+            user.UserName = appuser.UserName;
+            user.PhoneNumber = appuser.PhoneNumber;
+            user.PasswordHash = user.PasswordHash;
+            context.SaveChanges();
+            //var user = context.Users.Where(u => u.Id == id.ToString()).FirstOrDefault();
+            return RedirectToAction("UserList");
+        }
+
+        
+        [AllowAnonymous]
+
+        public ActionResult ParentEdit(string id)
+        {
+            var context = new Models.ApplicationDbContext();
+            var user = context.Users.Where(u => u.Id == id).FirstOrDefault();
+            return View(user);
+        }
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult ParentEdit(ApplicationUser appuser)
+        {
+            var context = new Models.ApplicationDbContext();
+            var user = context.Users.Where(u => u.Id == appuser.Id).FirstOrDefault();
+            //context.Entry(appuser).State = EntityState.Modified;
+            user.Email = appuser.Email;
+            user.UserName = appuser.UserName;
+            user.PhoneNumber = appuser.PhoneNumber;
+            user.PasswordHash = user.PasswordHash;
+            context.SaveChanges();
+            //var user = context.Users.Where(u => u.Id == id.ToString()).FirstOrDefault();
+            return RedirectToAction("ParentList");
+        }
+
+
+
+        [AllowAnonymous]
+        public ActionResult ParentDelete(string id)
+        {
+            var context = new Models.ApplicationDbContext();
+            var user = context.Users.Where(u => u.Id == id).FirstOrDefault();
+            return View(user);
+        }
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult ParentDelete(ApplicationUser appuser)
+        {
+            var context = new Models.ApplicationDbContext();
+            var user = context.Users.Where(u => u.Id == appuser.Id).FirstOrDefault();
+            context.Users.Remove(user);
+            context.SaveChanges();
+            //var user = context.Users.Where(u => u.Id == id.ToString()).FirstOrDefault();
+            return RedirectToAction("ParentList");
+        }
+
+        [AllowAnonymous]
+        public ActionResult StudentEdit(string id)
+        {
+            var context = new Models.ApplicationDbContext();
+            var user = context.Users.Where(u => u.Id == id).FirstOrDefault();
+            return View(user);
+        }
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult StudentEdit(ApplicationUser appuser)
+        {
+            var context = new Models.ApplicationDbContext();
+            var user = context.Users.Where(u => u.Id == appuser.Id).FirstOrDefault();
+            //context.Entry(appuser).State = EntityState.Modified;
+            user.Email = appuser.Email;
+            user.UserName = appuser.UserName;
+            user.PhoneNumber = appuser.PhoneNumber;
+            user.PasswordHash = user.PasswordHash;
+            context.SaveChanges();
+            //var user = context.Users.Where(u => u.Id == id.ToString()).FirstOrDefault();
+            return RedirectToAction("StudentsList");
+        }
+
+
+
+        [AllowAnonymous]
+        public ActionResult StudentDelete(string id)
+        {
+            var context = new Models.ApplicationDbContext();
+            var user = context.Users.Where(u => u.Id == id).FirstOrDefault();
+            return View(user);
+        }
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult StudentDelete(ApplicationUser appuser)
+        {
+            var context = new Models.ApplicationDbContext();
+            var user = context.Users.Where(u => u.Id == appuser.Id).FirstOrDefault();
+            context.Users.Remove(user);
+            context.SaveChanges();
+            //var user = context.Users.Where(u => u.Id == id.ToString()).FirstOrDefault();
+            return RedirectToAction("StudentsList");
+        }
+        [AllowAnonymous]
+        public ActionResult TeachersEdit(string id)
+        {
+            var context = new Models.ApplicationDbContext();
+            var user = context.Users.Where(u => u.Id == id).FirstOrDefault();
+            return View(user);
+        }
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult TeachersEdit(ApplicationUser appuser)
+        {
+            var context = new Models.ApplicationDbContext();
+            var user = context.Users.Where(u => u.Id == appuser.Id).FirstOrDefault();
+            //context.Entry(appuser).State = EntityState.Modified;
+            user.Email = appuser.Email;
+            user.UserName = appuser.UserName;
+            user.PhoneNumber = appuser.PhoneNumber;
+            user.PasswordHash = user.PasswordHash;
+            context.SaveChanges();
+            //var user = context.Users.Where(u => u.Id == id.ToString()).FirstOrDefault();
+            return RedirectToAction("TeachersList");
+        }
+
+
+
+        [AllowAnonymous]
+        public ActionResult TeachersDelete(string id)
+        {
+            var context = new Models.ApplicationDbContext();
+            var user = context.Users.Where(u => u.Id == id).FirstOrDefault();
+            return View(user);
+        }
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult TeachersDelete(ApplicationUser appuser)
+        {
+            var context = new Models.ApplicationDbContext();
+            var user = context.Users.Where(u => u.Id == appuser.Id).FirstOrDefault();
+            context.Users.Remove(user);
+            context.SaveChanges();
+            //var user = context.Users.Where(u => u.Id == id.ToString()).FirstOrDefault();
+            return RedirectToAction("TeachersList");
+        }
+
+      
+        //end of edit show delete
+
+
+
+
+
+
 
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
